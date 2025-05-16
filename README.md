@@ -1,7 +1,7 @@
-# 🌦️ Weather Data API
+# 🌦️  WeatherWise - Real-time Weather Dashboard
 
 ## 📌 Overview  
-Weather Data API is a Spring Boot-based application that fetches real-time weather data using the Open-Meteo API. It takes a location as input, retrieves its coordinates, and then fetches the weather details, including temperature, wind speed, and weather conditions.
+WeatherWise is a Spring Boot-based application that fetches real-time weather data using the Open-Meteo API. It takes a location as input, retrieves its coordinates, and then fetches the weather details, including temperature, wind speed, and weather conditions.
 
 ## ✨ Features  
 - ✅ Get latitude & longitude for a location using **Geocoding API**  
