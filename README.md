@@ -1,56 +1,75 @@
-# 🌦️  WeatherWise - Real-time Weather Dashboard
+# 🌦️ WeatherWise - Real-time Weather Dashboard
 
-## 📌 Overview  
-WeatherWise is a Spring Boot-based application that fetches real-time weather data using the Open-Meteo API. It takes a location as input, retrieves its coordinates, and then fetches the weather details, including temperature, wind speed, and weather conditions.
-
-## ✨ Features  
-- ✅ Get latitude & longitude for a location using **Geocoding API**  
-- ✅ Fetch **real-time weather** data based on location  
-- ✅ Returns **temperature, wind speed, weather code, and time**  
-- ✅ **Spring Boot WebClient** for API calls  
-- ✅ RESTful API returning **JSON responses**  
-
-## 🛠 Tech Stack  
-- **Java 21** – Latest Java version  
-- **Spring Boot** – Backend framework  
-- **Spring WebClient** – For external API requests  
-- **MongoDB** *(Optional: If persistence is needed)*  
-- **Maven** – Dependency management  
-- **Open-Meteo API** – Provides weather data  
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-3.0-green)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
-## 🔧 Prerequisites  
-Before running the project, ensure the following:  
-- **Java 21** is installed  
-- **Maven** is installed  
-- **Spring Boot** is set up in your IDE  
+## 📌 Overview
+
+**WeatherWise** is a real-time weather dashboard built with **Spring Boot** that fetches and displays live weather data using the **Open-Meteo API**.
+It takes a location name as input, fetches its coordinates using the **Geocoding API**, and then retrieves real-time weather details like temperature, wind speed, and weather conditions.
 
 ---
 
-## 🛀 Installation  
+## ✨ Features
 
-### 1️⃣ Clone the Repository  
-```sh
+* ✅ Get latitude & longitude for any location using **Geocoding API**
+* ✅ Fetch **real-time weather** data based on coordinates
+* ✅ Returns **temperature, wind speed, weather code, and time**
+* ✅ Uses **Spring Boot WebClient** for non-blocking API calls
+* ✅ RESTful API returning clean **JSON responses**
+
+---
+
+## 🧰 Tech Stack
+
+* **Java 21** – Latest Java version
+* **Spring Boot** – Backend framework
+* **Spring WebClient** – API communication
+* **MongoDB** *(Optional: for persistence)*
+* **Maven** – Project build & dependency management
+* **Open-Meteo API** – Free weather data provider
+
+---
+
+## 🔧 Prerequisites
+
+Ensure you have the following installed:
+
+* ✅ Java 21
+* ✅ Maven
+* ✅ Spring Boot enabled IDE (e.g., IntelliJ, Eclipse, VS Code)
+
+---
+
+## 🛠️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/your-username/WeatherDataAPI.git
 cd WeatherDataAPI
 ```
 
-### 2️⃣ Build and Run the Application  
-```sh
+### 2️⃣ Build and Run the Application
+
+```bash
 mvn clean install
 mvn spring-boot:run
 ```
 
-### 3️⃣ Test the API  
-After starting the application, you can test the API by making a **GET request**:  
+---
 
-#### Example: Fetch weather for "Coimbatore"  
-```sh
-GET http://localhost:8080/weather?location=Coimbatore
-```
+## 🌐 API Usage
 
-#### Example JSON Response:  
+Once the app is running, make a `GET` request to the following endpoint:
+
+🔗 [http://localhost:8080/weather?location=Coimbatore](http://localhost:8080/weather?location=Coimbatore)
+
+### 📦 Example JSON Response:
+
 ```json
 {
     "weatherDescription": "Thunderstorm",
@@ -64,45 +83,49 @@ GET http://localhost:8080/weather?location=Coimbatore
 
 ---
 
-## 💁 Project Structure  
+## 🧭 Project Structure
 
 ```
 WeatherDataAPI/
 │
 ├── src/
-│   ├── main/java/com/example/Weather_data_API/
-│   │   ├── controller/
-│   │   │   ├── WeatherController.java   # API Endpoints
-│   │   ├── service/
-│   │   │   ├── WeatherService.java      # Business logic
-│   │   ├── dto/
-│   │   │   ├── GeoCodingResponseDTO.java   # Geocoding response
-│   │   │   ├── WeatherAPIResponseDTO.java  # API weather response
-│   │   │   ├── WeatherResponseDTO.java     # Final response DTO
-│   │   ├── config/
-│   │   │   ├── WebClientConfig.java     # Configures WebClient
-│   │   ├── WeatherDataApiApplication.java  # Main Spring Boot app
+│   └── main/java/com/example/Weather_data_API/
+│       ├── controller/
+│       │   └── WeatherController.java        # Handles HTTP requests
+│       ├── service/
+│       │   └── WeatherService.java           # Core logic & API calls
+│       ├── dto/
+│       │   ├── GeoCodingResponseDTO.java     # Geocoding API response
+│       │   ├── WeatherAPIResponseDTO.java    # Raw weather API response
+│       │   └── WeatherResponseDTO.java       # Final JSON response DTO
+│       ├── config/
+│       │   └── WebClientConfig.java          # WebClient setup
+│       └── WeatherDataApiApplication.java    # Main class
 │
-├── .gitignore    # Ignore unnecessary files
-├── pom.xml       # Maven dependencies
-├── README.md     # Project documentation
+├── .gitignore
+├── pom.xml
+└── README.md
 ```
 
 ---
 
-## 🚀 Future Enhancements  
-- 🔹 Multi-day Forecast: Extend API to fetch hourly/daily weather  
-- 🔹 Caching: Use Redis to store results and reduce API calls  
-- 🔹 Database Integration: Store past weather searches in MongoDB  
-- 🔹 Frontend UI: Create a simple web interface for weather lookup  
+## 🚀 Future Enhancements
+
+* 🔄 **Multi-day Forecast:** Add hourly & weekly forecast support
+* 🚀 **Caching:** Integrate Redis to minimize API hits
+* 💾 **Database Integration:** Store search history using MongoDB
+* 🌐 **Frontend UI:** Add React or Angular-based interface
 
 ---
 
-## 📝 License  
-This project is open-source and available under the **MIT License**.
+## 📝 License
+
+This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-### 💡 Need Help?  
-Feel free to open an issue on GitHub! 🚀
+## 👨‍💻 Author
 
+**Boobathy R** 
+📧 [Mail ID](mailto:hungrylearner2002@gmail.com)
+---
